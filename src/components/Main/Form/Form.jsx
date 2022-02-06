@@ -4,12 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { ExpenseTrackerContext } from '../../../context/context';
 import { incomeCategories, expenseCategories } from '../../../constants/categories';
 import useStyles from './styles';
+import formatDate from '../../../utils/formatDate';
 
 const initialState = {
   amount: '',
   category: '',
   type: 'Income',
-  date: new Date(),
+  date: formatDate(new Date()),
 };
 
 const Form = () => {
@@ -62,7 +63,7 @@ const Form = () => {
         <TextField type="number" label="Amount" fullWidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
       </Grid>
       <Grid item xs={6}>
-        <TextField fullWidth label="Date" type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} />
+        <TextField fullWidth label="Date" type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
       </Grid>
       <Button className={classes.button} variant="outlined" color="primary" fullWidth onClick={createTransaction} >Create</Button> 
     </Grid>
