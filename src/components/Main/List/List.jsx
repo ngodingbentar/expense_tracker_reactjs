@@ -7,6 +7,8 @@ import useStyles from './styles';
 
 const List = () => {
   const classes = useStyles();
+  const {deleteTransaction} = useContext(ExpenseTrackerContext)
+  // console.log('glo', globalState)
   const transactions = [
     {id: 1, type: "Income", category: "Salary", amount: 50, date: new Date()},
     {id: 2, type: "Expense", category: "Salary", amount: 50, date: new Date()},
