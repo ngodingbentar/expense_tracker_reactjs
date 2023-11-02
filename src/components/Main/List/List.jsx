@@ -15,11 +15,11 @@ const List = () => {
         <Slide direction="down" in mountOnEnter unmountOnExit key={transaction.id}>
           <ListItem>
             <ListItemAvatar>
-              <Avatar className={transaction.type === 'Income' ? classes.avatarIncome : classes.avatarExpense}>
+              <Avatar className={transaction.type === 'Pemasukan' ? classes.avatarIncome : classes.avatarExpense}>
                 <MoneyOff />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary={transaction.category} secondary={`$${transaction.amount} - ${transaction.date}`} />
+            <ListItemText primary={transaction.category} secondary={`Rp. ${transaction.amount} / ${transaction.date}`} />
             <ListItemSecondaryAction>
               <IconButton edge="end" aria-label="delete" onClick={(() => deleteTransaction(transaction.id))}>
                 <Delete />

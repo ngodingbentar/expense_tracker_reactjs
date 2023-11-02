@@ -8,7 +8,7 @@ const useTransactions = (title) => {
   const { transactions } = useContext(ExpenseTrackerContext);
   const rightTransactions = transactions.filter((t) => t.type === title);
   const total = rightTransactions.reduce((acc, currVal) => acc += currVal.amount, 0);
-  const categories = title === 'Income' ? incomeCategories : expenseCategories;
+  const categories = title === 'Pemasukan' ? incomeCategories : expenseCategories;
 
   rightTransactions.forEach((t) => {
     const category = categories.find((c) => c.type === t.category);

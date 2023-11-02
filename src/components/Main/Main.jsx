@@ -10,10 +10,10 @@ const ExpenseTracker = () => {
   const { balance } = useContext(ExpenseTrackerContext);
 
   return (
-    <Card className={classes.root}>
-      <CardHeader title="Expense Tracker" />
+    <Card className={classes.root} style={{ marginTop: '50px' }}>
+      <CardHeader title="NB - Catat" />
       <CardContent>
-        <Typography align="center" variant="h5">Total Balance ${balance}</Typography>
+        <Typography align="center" variant="h5">Total Saldo Rp. {balance}</Typography>
         <Divider className={classes.divider} />
         <Form />
       </CardContent>
